@@ -12,15 +12,18 @@ TechSupport_OBJC_FILES = \
     lib/TSPackageCache.m
 TechSupport_FRAMEWORKS = MessageUI UIKit
 TechSupport_LIBRARIES = packageinfo
-ADDITIONAL_CFLAGS = -DFRAMEWORK_ID=\"$(FRAMEWORK_ID)\" -ILibraries/Common -Iinclude -include firmware.h -include include.pch
+ADDITIONAL_CFLAGS = -DFRAMEWORK_ID=\"$(FRAMEWORK_ID)\" -ILibraries/Common -Iinclude -include firmware.h -include include.pch -Wno-deprecated-declarations
 ADDITIONAL_LDFLAGS = -Wl,-segalign,4000
 
-export ARCHS = armv6 armv7 armv7s arm64
-export SDKVERSION = 8.4
-export TARGET = iphone:clang
-export TARGET_IPHONEOS_DEPLOYMENT_VERSION = 3.0
+export THEOS_DEVICE_IP = localhost
+export THEOS_DEVICE_PORT = 2222
 
-include theos/makefiles/common.mk
+TARGET = iphone:latest:7.0
+export ARCHS = arm64 arm64e 
+export SDKVERSION = 11.2
+export SYSROOT = $(THEOS)/sdks/iPhoneOS11.2.sdk
+
+include $(THEOS)/makefiles/common.mk
 include $(THEOS)/makefiles/framework.mk
 
 after-stage::
