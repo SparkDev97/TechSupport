@@ -71,7 +71,7 @@ static NSString *escapedHTMLString(NSString *string) {
 @synthesize webView = webView_;
 
 static void init(TSHTMLViewController *self) {
-    NSString *title = NSLocalizedString(@"COPY", nil);
+    NSString *title = NSLocalizedString(@"SHARE", nil);
     UIBarButtonItem *copyButton = [[UIBarButtonItem alloc] initWithTitle:title
         style:UIBarButtonItemStyleBordered target:self action:@selector(copyTextContent)];
     self.navigationItem.rightBarButtonItem = copyButton;
