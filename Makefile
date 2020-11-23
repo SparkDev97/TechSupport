@@ -10,7 +10,7 @@ TechSupport_OBJC_FILES = \
     lib/TSLinkInstruction.m \
     lib/TSPackage.m \
     lib/TSPackageCache.m
-TechSupport_FRAMEWORKS = MessageUI UIKit
+TechSupport_FRAMEWORKS = MessageUI UIKit WebKit
 TechSupport_LIBRARIES = packageinfo
 ADDITIONAL_CFLAGS = -DFRAMEWORK_ID=\"$(FRAMEWORK_ID)\" -ILibraries/Common -Iinclude -include firmware.h -include include.pch -Wno-deprecated-declarations
 ADDITIONAL_LDFLAGS = -Wl,-segalign,4000

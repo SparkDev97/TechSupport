@@ -13,11 +13,11 @@
 @interface UIWebDocumentView : UIView
 - (id)text;
 @end
-
+/*
 @interface UIWebView ()
 - (UIWebDocumentView *)_documentView;
 - (UIScrollView *)_scrollView;
-@end
+@end*/
 
 static NSString *escapedHTMLString(NSString *string) {
     const NSUInteger length = [string length];
@@ -61,7 +61,7 @@ static NSString *escapedHTMLString(NSString *string) {
 }
 
 @implementation TSHTMLViewController {
-    UIWebView *webView_;
+    WKWebView *webView_;
 
     NSString *content_;
     NSURL *url_;
@@ -122,15 +122,11 @@ static void init(TSHTMLViewController *self) {
     CGRect screenBounds = [mainScreen bounds];
     CGRect rect = CGRectMake(0.0, 0.0, screenBounds.size.width, screenBounds.size.height);
 
-    UIWebView *webView = [[UIWebView alloc] initWithFrame:rect];
+    WKWebView *webView = [[WKWebView alloc] initWithFrame:rect];
     webView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
-    webView.dataDetectorTypes = dataDetectors_;
-    webView.scalesPageToFit = YES;
-    if (IOS_LT(5_0)) {
-        [[webView _scrollView] setBounces:NO];
-    } else {
-        [[webView scrollView] setBounces:NO];
-    }
+    //webView.dataDetectorTypes = dataDetectors_;
+    //webView.scalesPageToFit = YES;
+    [[webView scrollView] setBounces:NO];
     if (content_ != nil) {
         [webView loadHTMLString:content_ baseURL:nil];
     } else if (url_ != nil) {
@@ -151,9 +147,10 @@ static void init(TSHTMLViewController *self) {
 #pragma mark - Actions
 
 - (void)copyTextContent {
+    /*
     UIWebDocumentView *webDocView = [webView_ _documentView];
     [webDocView becomeFirstResponder];
-    [UIPasteboard generalPasteboard].string = [webDocView text];
+    [UIPasteboard generalPasteboard].string = [webDocView text];*/
 }
 
 #pragma mark - Other
