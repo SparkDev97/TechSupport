@@ -1,6 +1,6 @@
 Package: com.spark.techsupport
 Name: TechSupport Framework (SparkDev)
-Version: 1.5.2
+Version: 1.6.1
 Description: Framework to assist in providing feedback to developers.
 Architecture: iphoneos-arm
 Pre-Depends: firmware (>=3.0)
@@ -15,4 +15,3 @@ Author: Lance Fetters (ashikase) <support@ashikase.com>
 Sponsor: thebigboss.org <http://thebigboss.org>
 Section: Development
 Tag: role::developer
-dev: ashikase

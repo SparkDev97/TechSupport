@@ -19,9 +19,9 @@ export THEOS_DEVICE_IP = localhost
 export THEOS_DEVICE_PORT = 2222
 
 TARGET = iphone:latest:7.0
-export ARCHS = arm64 arm64e 
-export SDKVERSION = 11.2
-export SYSROOT = $(THEOS)/sdks/iPhoneOS11.2.sdk
+export ARCHS = arm64 arm64e
+export SDKVERSION = 13.3
+export SYSROOT = $(THEOS)/sdks/iPhoneOS13.3.sdk
 
 include $(THEOS)/makefiles/common.mk
 include $(THEOS)/makefiles/framework.mk

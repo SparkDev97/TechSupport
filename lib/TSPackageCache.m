@@ -11,6 +11,7 @@
 #import "TSPackageCache.h"
 
 #import "TSPackage.h"
+#import <UIKit/UIKit.h>
 
 @implementation TSPackageCache {
     NSMutableDictionary *filepathBasedCache_;
